@@ -10,7 +10,7 @@
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <script src="jquery.js"></script>
+
   <title>Work Day Scheduler</title>
 </head>
 
@@ -24,13 +24,13 @@
     <!-- Timeblocks go here -->
     <div class="row time-block">
       <div class="col-sm-1 hour">
-        <p>9am</p>
+        <p id="hour9">9am</p>
       </div>
       <div class="col-sm-10 description">
-        <p></p>
+        <textarea id="text9"></textarea>
       </div>
       <div class="col-sm-1 time-block">
-        <button type="button" class="saveBtn">Save</button>
+        <button type="button" data-timeslot="9" class="saveBtn">Save</button>
       </div>
     </div>
 
@@ -39,10 +39,10 @@
         <p>10am</p>
       </div>
       <div class="col-sm-10 description">
-        <p></p>
+        <textarea id="text10"></textarea>
       </div>
       <div class="col-sm-1">
-        <button type="button" class="saveBtn">Save</button>
+        <button type="button" data-timeslot="10" class="saveBtn">Save</button>
       </div>
     </div>
 
@@ -50,11 +50,13 @@
       <div class="col-sm-1 hour">
         <p>11am</p>
       </div>
+
       <div class="col-sm-10 description">
-        <p></p>
+        <textarea id="text11"></textarea>
       </div>
-      <div class="col-sm-1">
-        <button type="button" class="saveBtn">Save</button>
+
+      <div class="col-sm-1 hour">
+        <button type="button" data-timeslot="11" class="saveBtn">Save</button>
       </div>
     </div>
 
@@ -63,34 +65,36 @@
         <p>12pm</p>
       </div>
       <div class="col-sm-10 description">
-        <p></p>
+        <textarea id="text12"></textarea>
       </div>
       <div class="col-sm-1">
-        <button type="button" class="saveBtn">Save</button>
-      </div>
-
-      <div class="row time-block">
-        <div class="col-sm-1 hour">
-          <p>1pm</p>
-        </div>
-        <div class="col-sm-10 description">
-          <p></p>
-        </div>
-        <div class="col-sm-1">
-          <button type="button" class="saveBtn">Save</button>
-        </div>
+        <button type="button" data-timeslot="12" class="saveBtn">Save</button>
       </div>
     </div>
+
+
+    <div class="row time-block">
+      <div class="col-sm-1 hour">
+        <p>1pm</p>
+      </div>
+      <div class="col-sm-10 description">
+        <textarea id="text1"></textarea>
+      </div>
+      <div class="col-sm-1">
+        <button type="button" data-timeslot="1" class="saveBtn">Save</button>
+      </div>
+    </div>
+
 
     <div class="row time-block">
       <div class="col-sm-1 hour">
         <p>2pm</p>
       </div>
       <div class="col-sm-10 description">
-        <p></p>
+        <textarea id="text2"></textarea>
       </div>
       <div class="col-sm-1">
-        <button type="button" class="saveBtn">Save</button>
+        <button type="button" data-timeslot="2" class="saveBtn">Save</button>
       </div>
     </div>
 
@@ -99,10 +103,10 @@
         <p>3pm</p>
       </div>
       <div class="col-sm-10 description">
-        <p></p>
+        <textarea></textarea>
       </div>
       <div class="col-sm-1">
-        <button type="button" class="saveBtn">Save</button>
+        <button type="button" data-timeslot="3" class="saveBtn">Save</button>
       </div>
     </div>
 
@@ -111,10 +115,10 @@
         <p>4pm</p>
       </div>
       <div class="col-sm-10 description">
-        <p></p>
+        <textarea id="text12"></textarea>
       </div>
       <div class="col-sm-1">
-        <button type="button" class="saveBtn">Save</button>
+        <button type="button" data-timeslot="4" class="saveBtn">Save</button>
       </div>
     </div>
 
@@ -123,14 +127,15 @@
         <p>5pm</p>
       </div>
       <div class="col-sm-10 description">
-        <p></p>
+        <textarea></textarea>
       </div>
       <div class="col-sm-1">
-        <button type="button" class="saveBtn">Save</button>
+        <button type="button" data-timeslot="5" class="saveBtn">Save</button>
       </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 </body>
 
