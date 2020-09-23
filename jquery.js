@@ -22,9 +22,10 @@ function renderAppDetails() {
         var tex;
 
     */
-    const dateVar = moment().format("DoM MM YYYY");
+
+    const dateVar = moment().format("dddd Do MMMM YYYY");
     console.log(dateVar);
-    $("#currentDay").innerHTML = dateVar;
+    $("#currentDay").text(dateVar);
 
     $("#text9").val(localStorage.getItem("9"));
     $("#text10").val(localStorage.getItem("10"));
