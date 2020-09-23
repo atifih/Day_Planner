@@ -8,8 +8,8 @@ function renderAppDetails() {
     for (var i = 9; i <= 12; i++) {
         var str = i.toString();
         var tex;
-
-        tex = JSON.parse(localStorage.getItem(str));
+        console.log((localStorage.getItem(str)));
+        tex = (localStorage.getItem(str));
         if (tex !== null) {
             $(".container").append(tex);
         }
@@ -19,7 +19,7 @@ function renderAppDetails() {
         var str = j.toString();
         var tex;
 
-        tex = JSON.parse(localStorage.getItem(str));
+        tex = (localStorage.getItem(str));
         if (tex !== null) {
 
             $(".container").append(tex);
@@ -57,6 +57,7 @@ function storeAppDetails() {
             appDetails.push(details);
             localStorage.setItem(hour, JSON.stringify(details));
             var storedAppDetails = JSON.parse(localStorage.getItem("appDetails"));
+            console.log((localStorage.getItem("appDetails")));
             if (storedAppDetails !== null) {
                 appDetails = storedAppDetails;
             }
