@@ -10,23 +10,29 @@ function renderAppDetails() {
         var tex;
 
         tex = JSON.parse(localStorage.getItem(str));
-        $(".container").append(tex);
-        //loop from 1 till 5
-        for (var i = 1; i <= 5; i++) {
-            var str = i.toString();
-            var tex;
-
-            tex = JSON.parse(localStorage.getItem(str));
+        if (tex !== null) {
             $(".container").append(tex);
-            //get element by id for the respective hour
-            //set the text of the element you retrieved to tex
         }
-
-
-
-
-
     }
+    //loop from 1 till 5
+    for (var j = 1; j <= 5; j++) {
+        var str = j.toString();
+        var tex;
+
+        tex = JSON.parse(localStorage.getItem(str));
+        if (tex !== null) {
+
+            $(".container").append(tex);
+        }
+        //get element by id for the respective hour
+        //set the text of the element you retrieved to tex
+    }
+
+
+
+
+
+
 }
 
 
