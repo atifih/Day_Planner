@@ -5,6 +5,8 @@ var appDetails = [{ hour, Details }];
 function renderAppDetails() {
 
     //loop from 9 till 12
+
+    /*
     for (var i = 9; i <= 12; i++) {
         var str = i.toString();
         var tex;
@@ -19,14 +21,31 @@ function renderAppDetails() {
         var str = j.toString();
         var tex;
 
-        tex = (localStorage.getItem(str));
-        if (tex !== null) {
+    */
+    const dateVar = moment().format("DoM MM YYYY");
+    console.log(dateVar);
+    $("#currentDay").innerHTML = dateVar;
 
-            $(".container").append(tex);
-        }
-        //get element by id for the respective hour
-        //set the text of the element you retrieved to tex
+    $("#text9").val(localStorage.getItem("9"));
+    $("#text10").val(localStorage.getItem("10"));
+    $("#text11").val(localStorage.getItem("11"));
+    $("#text12").val(localStorage.getItem("12"));
+    $("#text1").val(localStorage.getItem("1"));
+    $("#text2").val(localStorage.getItem("2"));
+    $("#text3").val(localStorage.getItem("3"));
+    $("#text4").val(localStorage.getItem("4"));
+    $("#text5").val(localStorage.getItem("5"));
+
+}
+
+/*
+    if (tex !== null) {
+
+        $(".container").append(tex);
     }
+    //get element by id for the respective hour
+    //set the text of the element you retrieved to tex
+}
 
 
 
@@ -40,7 +59,7 @@ function renderAppDetails() {
 
 /*
 function init(){
-    storedappDetails = JSON.parse(localStorage.getItem("Details"));
+storedappDetails = JSON.parse(localStorage.getItem("Details"));
  
 }
  
