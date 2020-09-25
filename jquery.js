@@ -3,21 +3,26 @@ var Details;
 var appDetails = [{ hour, Details }];
 
 function setTimes() {
-    // Set all the times to one appropriate colour coding
+    // Set all the times to appropriate  colour coding
     const timeVar = moment().format("h");
-    $("div").each(function (index) {
-        if ($(this).attr("data-timeslot") == timeVar) {
+    console.log(timeVar);
+
+    $(".time-block").each(function (index) {
+        console.log($(this).attr("data-hour"));
+        if ($(this).attr("data-hour") < 14)
+            $(this).addClass("past");
+        if ($(this).attr("data-hour") === timeVar) {
             $(this).addClass("present");
         }
-        else if ($(this).attr(“data - timeslot") < timeVar) {
-            $(this).addClass("past")
-    } else {
-        $(this).addClass("future");
-    }
+        else if ($(this).attr("data-hour") < timeVar) {
+            $(this).addClass("past");
+        } else {
+            $(this).addClass("future");
+        }
     });
 
-
 }
+
 
 function renderAppDetails() {
 
@@ -115,6 +120,7 @@ function storeAppDetails() {
 
 
 }
+setTimes();
 renderAppDetails();
 storeAppDetails();
-setTimes();
+
