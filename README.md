@@ -4,9 +4,9 @@ A calendar application that enables that enables the end-user to save events tha
 # Contents
 The app is composed of 3 files rendering a single web page. The files associated with  the web page are as follows:
 
-index.html 
-style.css 
-jquery.js
+1. index.html 
+2. style.css 
+3. jquery.js
 
  # User Story
 An employee with a busy schedule wants to add important events to a daily planner in order to manage their time effectively.
