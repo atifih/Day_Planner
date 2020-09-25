@@ -3,10 +3,20 @@ var Details;
 var appDetails = [{ hour, Details }];
 
 function setTimes() {
-    // Set all the times to one class.
+    // Set all the times to one appropriate colour coding
+    const timeVar = moment().format("h");
+    $("div").each(function (index) {
+        if ($(this).attr("data-timeslot") == timeVar) {
+            $(this).addClass("present");
+        }
+        else if ($(this).attr(“data - timeslot") < timeVar) {
+            $(this).addClass("past")
+    } else {
+        $(this).addClass("future");
+    }
+    });
 
-    $()
-
+
 }
 
 function renderAppDetails() {
@@ -36,8 +46,8 @@ function renderAppDetails() {
     const dateVar = moment().format("dddd Do MMMM YYYY");
     console.log(dateVar);
     $("#currentDay").text(dateVar);
-    const timeVar = moment().format("h");
-    console.log(timeVar);
+
+
 
     $("#text9").val(localStorage.getItem("9"));
     $("#text10").val(localStorage.getItem("10"));
@@ -49,7 +59,7 @@ function renderAppDetails() {
     $("#text4").val(localStorage.getItem("4"));
     $("#text5").val(localStorage.getItem("5"));
 
-    setTimes();
+
 
 
 
@@ -107,4 +117,4 @@ function storeAppDetails() {
 }
 renderAppDetails();
 storeAppDetails();
-
+setTimes();
