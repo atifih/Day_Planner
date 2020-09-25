@@ -4,20 +4,22 @@ var appDetails = [{ hour, Details }];
 
 function setTimes() {
     // Set all the times to appropriate  colour coding
-    const timeVar = moment().format("h");
-    console.log(timeVar);
+    const timeVar = moment().format("H");
+    console.log("timeVar is: " + timeVar);
+    // for (var i =9; i< 6; i++){}
+    $(".time-block").each(function (index) { //
 
-    $(".time-block").each(function (index) {
         console.log($(this).attr("data-hour"));
-        if ($(this).attr("data-hour") < 14)
-            $(this).addClass("past");
+
+        //       if ($(this).attr("data-hour") < 14)
+        //           $(this).addClass("past");
         if ($(this).attr("data-hour") === timeVar) {
             $(this).addClass("present");
         }
-        else if ($(this).attr("data-hour") < timeVar) {
-            $(this).addClass("past");
-        } else {
+        else if ($(this).attr("data-hour") > timeVar) {
             $(this).addClass("future");
+        } else {
+            $(this).addClass("past");
         }
     });
 
@@ -49,8 +51,8 @@ function renderAppDetails() {
 
 
     const dateVar = moment().format("dddd Do MMMM YYYY");
-    console.log(dateVar);
-    $("#currentDay").text(dateVar);
+    //  console.log(dateVar);
+    $("#currentDay").text(dateVar); // Setting today's date.
 
 
 
@@ -70,32 +72,8 @@ function renderAppDetails() {
 
 }
 
-/*
-    if (tex !== null) {
-
-        $(".container").append(tex);
-    }
-    //get element by id for the respective hour
-    //set the text of the element you retrieved to tex
-}
 
 
-
-
-
-
-}
-
-
-
-
-/*
-function init(){
-storedappDetails = JSON.parse(localStorage.getItem("Details"));
- 
-}
- 
-*/
 
 function storeAppDetails() {
     $(document).ready(function () {
@@ -106,13 +84,20 @@ function storeAppDetails() {
             console.log(details);
             console.log(hour);
             appDetails.push(details);
-            localStorage.setItem(hour, JSON.stringify(details));
-            var storedAppDetails = JSON.parse(localStorage.getItem("appDetails"));
+            // localStorage.setItem(hour, JSON.stringify(details));
+            localStorage.setItem(hour, details);
+            // var storedAppDetails = JSON.parse(localStorage.getItem("appDetails"));
+            var storedAppDetails = localStorage.getItem("appDetails");
+            if (appDetails === "") {
+                return; // return from function if submitted appointment is blank.
+            }
+            appDetails.push(details);
+            details = "";
             console.log((localStorage.getItem("appDetails")));
             if (storedAppDetails !== null) {
-                appDetails = storedAppDetails;
+                appDetails = storedAppDetails
             }
-
+            renderAppDetails(); // re-render planner.
 
 
         });
