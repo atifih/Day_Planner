@@ -26,6 +26,7 @@ MIT License.
 
 # Link to the App
 https://github.com/atifih/Day_Planner
+https://atifih.github.io/Day_Planner/
 
 # Authors
 Haque, Atif
